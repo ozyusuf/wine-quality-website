@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import PresentationLayout, { Slide } from '../components/layout/PresentationLayout';
 import SlideIntro from '../components/slides/SlideIntro';
 import SlideDefiningTarget from '../components/slides/SlideDefiningTarget';
@@ -11,7 +11,8 @@ import SlideConclusion from '../components/slides/SlideConclusion';
 import SlideDeployment from '../components/slides/SlideDeployment';
 import SlideBusinessValue from '../components/slides/SlideBusinessValue';
 import SlideResources from '../components/slides/SlideResources';
-import ModelDemo from '../components/ModelDemo';
+
+const ModelDemo = React.lazy(() => import('../components/ModelDemo'));
 
 function Home() {
     return (
@@ -70,7 +71,14 @@ function Home() {
 
             {/* Slide 17: Live Inference Demo */}
             <Slide className="bg-black/90 relative p-0">
-                <ModelDemo />
+                <Suspense fallback={
+                    <div className="h-full w-full flex flex-col items-center justify-center gap-4">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-wine-red"></div>
+                        <p className="text-wine-red font-mono text-sm animate-pulse">Initializing AI Runtime...</p>
+                    </div>
+                }>
+                    <ModelDemo />
+                </Suspense>
             </Slide>
 
             {/* Slide 18: Resources */}

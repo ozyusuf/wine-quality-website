@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import MobileWarning from '../common/MobileWarning';
 
 const PresentationLayout = ({ children }) => {
     return (
         <div className="h-screen w-full bg-black text-white overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-            {/* Global Read Report Button */}
-
-
+            <MobileWarning />
             {/* Slides Container */}
             {children}
 

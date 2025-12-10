@@ -267,6 +267,14 @@ export default function ModelDemo() {
                             {/* Glow effect */}
                             <div className="absolute inset-0 rounded-full blur-md bg-pink-500/20"></div>
                         </button>
+
+                        {/* Explicit Status Indicator */}
+                        {!loading && !isAnimating && (
+                            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-[10px] text-green-400 font-mono opacity-80">
+                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                MODEL READY
+                            </div>
+                        )}
                     </div>
 
                     {/* Results Panel */}

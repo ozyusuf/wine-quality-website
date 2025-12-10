@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ZoomableImage from '../common/ZoomableImage';
 
 export default function SlideRedWine() {
     const [activeTab, setActiveTab] = useState('performance');
@@ -56,7 +57,12 @@ export default function SlideRedWine() {
                                 Tuned via GridSearchCV. Optimized for <span className="text-wine-red font-bold">Precision</span> to act as a "Gatekeeper" for premium labeling.
                             </p>
                             <div className="bg-white p-2 rounded-xl h-48 border border-white/10">
-                                <img src="/assets/ml-project/images/red-wine/red_cv_distribution.png" className="w-full h-full object-contain" alt="CV Dist" />
+                                <ZoomableImage
+                                    src="/assets/ml-project/images/red-wine/red_cv_distribution.png"
+                                    className="w-full h-full object-contain"
+                                    alt="CV Dist"
+                                    containerClassName="w-full h-full"
+                                />
                             </div>
                             <p className="text-center text-xs text-gray-500 uppercase tracking-widest mt-1">Figure: Cross-Validation Score Distribution</p>
                         </div>
@@ -101,7 +107,12 @@ export default function SlideRedWine() {
                 {activeTab === 'shap' && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col h-full gap-4 overflow-y-auto pb-6">
                         <div className="flex-1 bg-white p-2 rounded-xl relative min-h-[400px]">
-                            <img src="/assets/ml-project/images/red-wine/red_shap_summary_dot.png" className="w-full h-full object-contain" alt="SHAP Summary" />
+                            <ZoomableImage
+                                src="/assets/ml-project/images/red-wine/red_shap_summary_dot.png"
+                                className="w-full h-full object-contain"
+                                alt="SHAP Summary"
+                                containerClassName="w-full h-full"
+                            />
                         </div>
                         <p className="text-center text-xs text-gray-500 uppercase tracking-widest">Figure: SHAP Summary Plot (Feature Importance & Impact)</p>
 
@@ -123,14 +134,24 @@ export default function SlideRedWine() {
                         <div className="space-y-4">
                             <h4 className="text-center text-gray-400 uppercase text-xs">Confusion Matrix</h4>
                             <div className="bg-white p-2 rounded-xl h-[400px]">
-                                <img src="/assets/ml-project/images/red-wine/red_rf_confusion_matrix_v3.png" className="w-full h-full object-contain" alt="Confusion Matrix" />
+                                <ZoomableImage
+                                    src="/assets/ml-project/images/red-wine/red_rf_confusion_matrix_v3.png"
+                                    className="w-full h-full object-contain"
+                                    alt="Confusion Matrix"
+                                    containerClassName="w-full h-full"
+                                />
                             </div>
                             <p className="text-center text-xs text-gray-500">210 True Negatives vs 25 False Negatives</p>
                         </div>
                         <div className="space-y-4">
                             <h4 className="text-center text-gray-400 uppercase text-xs">ROC Curve (AUC = 0.87)</h4>
                             <div className="bg-white p-2 rounded-xl h-[400px]">
-                                <img src="/assets/ml-project/images/red-wine/red_rf_roc_curve.png" className="w-full h-full object-contain" alt="ROC Curve" />
+                                <ZoomableImage
+                                    src="/assets/ml-project/images/red-wine/red_rf_roc_curve.png"
+                                    className="w-full h-full object-contain"
+                                    alt="ROC Curve"
+                                    containerClassName="w-full h-full"
+                                />
                             </div>
                         </div>
                     </motion.div>

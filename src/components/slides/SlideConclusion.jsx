@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ZoomableImage from '../common/ZoomableImage';
 
 export default function SlideConclusion() {
     const [activeTab, setActiveTab] = useState('model_analysis');
@@ -102,14 +103,24 @@ export default function SlideConclusion() {
                         <div className="space-y-4">
                             <h4 className="text-center text-gray-400 uppercase text-xs">ROC Curve (AUC = 0.85)</h4>
                             <div className="bg-white p-2 rounded-xl h-[350px]">
-                                <img src="/assets/ml-project/images/combined/combined_xgb_roc_curve.png" className="w-full h-full object-contain" alt="Combined ROC" />
+                                <ZoomableImage
+                                    src="/assets/ml-project/images/combined/combined_xgb_roc_curve.png"
+                                    className="w-full h-full object-contain"
+                                    alt="Combined ROC"
+                                    containerClassName="w-full h-full"
+                                />
                             </div>
                             <p className="text-center text-xs text-gray-500 pb-4">Demonstrates strong separation capability across the unified dataset.</p>
                         </div>
                         <div className="space-y-4">
                             <h4 className="text-center text-gray-400 uppercase text-xs">Confusion Matrix</h4>
                             <div className="bg-white p-2 rounded-xl h-[350px]">
-                                <img src="/assets/ml-project/images/combined/combined_confusion_matrix.png" className="w-full h-full object-contain" alt="Combined CM" />
+                                <ZoomableImage
+                                    src="/assets/ml-project/images/combined/combined_confusion_matrix.png"
+                                    className="w-full h-full object-contain"
+                                    alt="Combined CM"
+                                    containerClassName="w-full h-full"
+                                />
                             </div>
                             <p className="text-center text-xs text-gray-500 pb-4">Consistent performance across both Red and White wine samples.</p>
                         </div>

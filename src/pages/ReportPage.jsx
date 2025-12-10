@@ -203,33 +203,28 @@ function ReportPage() {
 
                     {/* Main Content */}
                     <main className="lg:col-span-9">
-                        <article className="prose prose-invert prose-lg max-w-none 
+                        <article className="prose prose-invert prose-lg max-w-none break-words
                   prose-headings:font-display prose-headings:font-bold prose-headings:tracking-wide prose-headings:scroll-mt-32
                   
-                  prose-h1:text-5xl md:prose-h1:text-6xl prose-h1:leading-tight prose-h1:mb-16 prose-h1:text-transparent prose-h1:bg-clip-text prose-h1:bg-gradient-to-r prose-h1:from-wine-gold prose-h1:via-white prose-h1:to-tech-purple
+                  prose-h1:text-3xl sm:prose-h1:text-5xl lg:prose-h1:text-6xl prose-h1:leading-snug prose-h1:mb-12 prose-h1:text-transparent prose-h1:bg-clip-text prose-h1:bg-gradient-to-r prose-h1:from-wine-gold prose-h1:via-white prose-h1:to-tech-purple
                   
-                  prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-white prose-h2:mt-24 prose-h2:mb-8 prose-h2:pb-6 prose-h2:border-b prose-h2:border-white/10
+                  prose-h2:text-2xl sm:prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-white prose-h2:mt-16 prose-h2:mb-6 prose-h2:pb-4 prose-h2:border-b prose-h2:border-white/10
                   
-                  prose-h3:text-xl md:prose-h3:text-2xl prose-h3:text-tech-blue prose-h3:mt-12 prose-h3:mb-6 prose-h3:font-normal
+                  prose-h3:text-xl md:prose-h3:text-2xl prose-h3:text-tech-blue prose-h3:mt-10 prose-h3:mb-4 prose-h3:font-normal
                   
-                  prose-p:text-gray-300 prose-p:text-lg prose-p:leading-loose prose-p:mb-8
+                  prose-p:text-gray-300 prose-p:text-base sm:prose-p:text-lg prose-p:leading-relaxed prose-p:mb-6
                   
-                  prose-li:text-gray-300 prose-li:text-lg prose-li:marker:text-tech-purple
+                  prose-li:text-gray-300 prose-li:text-base sm:prose-li:text-lg prose-li:marker:text-tech-purple
                   
                   prose-strong:text-white prose-strong:font-bold
                   
                   prose-a:text-tech-blue prose-a:no-underline hover:prose-a:text-tech-purple hover:prose-a:underline transition-colors
                   
-                  prose-blockquote:border-l-4 prose-blockquote:border-wine-gold prose-blockquote:bg-gradient-to-r prose-blockquote:from-wine-gold/10 prose-blockquote:to-transparent prose-blockquote:px-8 prose-blockquote:py-6 prose-blockquote:rounded-r-xl prose-blockquote:italic prose-blockquote:text-wine-white prose-blockquote:not-italic
+                  prose-blockquote:border-l-4 prose-blockquote:border-wine-gold prose-blockquote:bg-gradient-to-r prose-blockquote:from-wine-gold/10 prose-blockquote:to-transparent prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:italic prose-blockquote:text-wine-white prose-blockquote:not-italic
                   
-                  prose-code:text-wine-gold prose-code:bg-black/30 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:font-mono prose-code:text-sm prose-code:border prose-code:border-white/10
+                  prose-code:text-wine-gold prose-code:bg-black/30 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm prose-code:border prose-code:border-white/10
                   
-                  prose-img:rounded-2xl prose-img:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] prose-img:border prose-img:border-white/10 prose-img:my-12 prose-img:w-full
-                  
-                  prose-table:w-full prose-table:border-collapse prose-table:my-12 prose-table:bg-white/5 prose-table:rounded-xl prose-table:overflow-hidden prose-table:block md:prose-table:table prose-table:shadow-xl
-                  prose-thead:bg-white/10
-                  prose-th:p-5 prose-th:text-left prose-th:text-white prose-th:font-display prose-th:tracking-wider prose-th:uppercase prose-th:text-sm prose-th:border-b prose-th:border-white/10
-                  prose-td:p-5 prose-td:border-b prose-td:border-white/5 prose-td:text-gray-300 first:prose-td:text-white
+                  prose-img:rounded-2xl prose-img:shadow-xl prose-img:border prose-img:border-white/10 prose-img:my-8 prose-img:w-full
                   ">
                             <ReactMarkdown
                                 remarkPlugins={[remarkGfm, remarkMath]}
@@ -241,6 +236,13 @@ function ReportPage() {
                                             {...props}
                                             className="w-full h-auto rounded-xl shadow-2xl border border-white/10 hover:shadow-tech-purple/20 transition-all duration-500"
                                         />
+                                    ),
+                                    table: ({ node, children, ...props }) => (
+                                        <div className="overflow-x-auto my-8 rounded-xl border border-white/10 shadow-lg bg-white/5">
+                                            <table {...props} className="w-full text-left border-collapse text-sm min-w-max">
+                                                {children}
+                                            </table>
+                                        </div>
                                     ),
                                     blockquote: ({ node, children, ...props }) => {
                                         // Detect if this is the Pipeline block

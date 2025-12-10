@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ZoomableImage from '../common/ZoomableImage';
 
 export default function SlideStatistics() {
     return (
@@ -62,13 +63,23 @@ export default function SlideStatistics() {
                 >
                     <div className="space-y-3">
                         <div className="bg-white/5 p-4 rounded-xl border border-white/10 h-[350px] flex flex-col items-center justify-center">
-                            <img src="/assets/ml-project/images/red-wine/red_wine_distribution_v3.png" alt="Red Wine Dist" className="h-full w-auto max-w-full rounded object-contain" />
+                            <ZoomableImage
+                                src="/assets/ml-project/images/red-wine/red_wine_distribution_v3.png"
+                                alt="Red Wine Dist"
+                                className="h-full w-auto max-w-full rounded object-contain"
+                                containerClassName="h-full flex items-center justify-center p-2"
+                            />
                         </div>
                         <p className="text-center text-xs text-gray-500 uppercase tracking-widest">Figure 1: Red Wine Quality Distribution</p>
                     </div>
                     <div className="space-y-3">
                         <div className="bg-white/5 p-4 rounded-xl border border-white/10 h-[350px] flex flex-col items-center justify-center">
-                            <img src="/assets/ml-project/images/white-wine/07_class_distribution_v3.png" alt="White Wine Dist" className="h-full w-auto max-w-full rounded object-contain" />
+                            <ZoomableImage
+                                src="/assets/ml-project/images/white-wine/07_class_distribution_v3.png"
+                                alt="White Wine Dist"
+                                className="h-full w-auto max-w-full rounded object-contain"
+                                containerClassName="h-full flex items-center justify-center p-2"
+                            />
                         </div>
                         <p className="text-center text-xs text-gray-500 uppercase tracking-widest">Figure 2: White Wine Quality Distribution</p>
                     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ZoomableImage from '../common/ZoomableImage';
 
 export default function SlideExperiment() {
     return (
@@ -28,7 +29,12 @@ export default function SlideExperiment() {
                     className="bg-white p-4 rounded-xl shadow-[0_0_50px_rgba(59,130,246,0.2)] h-[600px] flex flex-col"
                 >
                     <p className="text-black text-center text-xs font-bold uppercase mb-4">Combined Feature Importance</p>
-                    <img src="/assets/ml-project/images/combined/combined_feature_importance.png" className="w-full flex-1 object-contain rounded" alt="Feature Importance" />
+                    <ZoomableImage
+                        src="/assets/ml-project/images/combined/combined_feature_importance.png"
+                        className="w-full flex-1 object-contain rounded"
+                        alt="Feature Importance"
+                        containerClassName="h-full flex flex-col"
+                    />
                     <div className="mt-4 text-center shrink-0">
                         <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full border border-red-300">
                             Result: 'type' is ranked LAST (Importance ≈ 0)
