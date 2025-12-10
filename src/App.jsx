@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home';
 import ViewportManager from './components/common/ViewportManager';
 import LoadingScreen from './components/common/LoadingScreen';
+import CustomCursor from './components/common/CustomCursor';
 
 const ReportPage = lazy(() => import('./pages/ReportPage'));
 
@@ -12,6 +13,8 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
+
       <AnimatePresence>
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
