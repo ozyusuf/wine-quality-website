@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-wine-red: #722F37;
+  --color-wine-darkRed: #4A0404;
+  --color-wine-white: #F7E7CE;
+  --color-wine-gold: #D4AF37;
+  --color-wine-rose: #E68FA5;
+
+  --color-tech-purple: #9D4EDD;
+  --color-tech-blue: #00D9FF;
+  --color-tech-dark: #0A0A0F;
+  --color-tech-surface: #151520;
+
+  --font-display: 'Outfit', 'sans-serif';
+  --font-sans: 'Inter', 'sans-serif';
+}
+
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Projector Optimization: Increased base font size from 16px to 18px */
+  font-size: 18px;
+  /* Scales all rem units up by 12.5% */
+
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0A0A0F;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #722F37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9D4EDD;
+}
