@@ -11,6 +11,8 @@ import SlideConclusion from '../components/slides/SlideConclusion';
 import SlideDeployment from '../components/slides/SlideDeployment';
 import SlideBusinessValue from '../components/slides/SlideBusinessValue';
 import SlideResources from '../components/slides/SlideResources';
+import SlideScorePrediction from '../components/slides/SlideScorePrediction';
+import SlideTypePrediction from '../components/slides/SlideTypePrediction';
 
 const ModelDemo = React.lazy(() => import('../components/ModelDemo'));
 
@@ -49,12 +51,22 @@ function Home() {
                 <SlideWhiteWine />
             </Slide>
 
-            {/* Slide 11-12: Scientific Experiment */}
+            {/* Slide 13-14: Scientific Experiment */}
             <Slide className="bg-gradient-to-r from-tech-dark to-black">
                 <SlideExperiment />
             </Slide>
 
-            {/* Slide 13-14: Results */}
+            {/* Slide: Score Prediction */}
+            <Slide className="bg-black">
+                <SlideScorePrediction />
+            </Slide>
+
+            {/* Slide: Type Prediction */}
+            <Slide className="bg-gradient-to-br from-black to-tech-purple/20">
+                <SlideTypePrediction />
+            </Slide>
+
+            {/* Slide 15-16: Results */}
             <Slide className="bg-black">
                 <SlideConclusion />
             </Slide>

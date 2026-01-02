@@ -14,7 +14,7 @@ function ReportPage() {
     const [content, setContent] = useState('');
 
     useEffect(() => {
-        fetch('/assets/ml-project/docs/FINAL_PROJECT_REPORT.md')
+        fetch('/assets/ml-project/docs/README.md')
             .then((res) => res.text())
             .then((text) => setContent(text));
     }, []);
@@ -29,6 +29,15 @@ function ReportPage() {
         }
         if (src.startsWith('combined_outputs/')) {
             return src.replace('combined_outputs/', '/assets/ml-project/images/combined/');
+        }
+        if (src.startsWith('combined_analysis/outputs/')) {
+            return src.replace('combined_analysis/outputs/', '/assets/ml-project/images/combined/');
+        }
+        if (src.startsWith('score_prediction/outputs/')) {
+            return src.replace('score_prediction/outputs/', '/assets/ml-project/images/score_prediction/');
+        }
+        if (src.startsWith('type_prediction/outputs/')) {
+            return src.replace('type_prediction/outputs/', '/assets/ml-project/images/type_prediction/');
         }
         return src;
     };
